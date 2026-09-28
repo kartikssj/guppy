@@ -1,8 +1,13 @@
+---
+title: Terms of Service
+permalink: /terms/
+---
+
 # Terms of Service for guppy
 
 **Effective date:** 2026-09-28
-**Contact:** `https://github.com/kartikssj/guppy`
-**Project:** `kartikssj@gmail.com`
+**Contact:** `kartikssj@gmail.com`
+**Project:** `https://github.com/kartikssj/guppy`
 
 These Terms of Service ("Terms") govern your use of guppy, a free,
 open-source terminal application for Google Tasks. By using guppy, you agree
@@ -12,8 +17,8 @@ to these Terms.
 
 guppy is a desktop application that runs on your own computer and lets you
 view and manage your Google Tasks via the Google Tasks API. guppy is provided
-free of charge, and its source code is available at `<repository-url>` under
-the license included there.
+free of charge, and its source code is available at
+`https://github.com/kartikssj/guppy` under the license included there.
 
 ## 2. Your responsibilities
 
@@ -28,7 +33,8 @@ the license included there.
 
 ## 3. Privacy
 
-guppy's data practices are described in the [Privacy Policy](PRIVACY.md).
+guppy's data practices are described in the
+[Privacy Policy](https://kartikssj.github.io/guppy/privacy/).
 In short: guppy collects nothing; your task data goes only between your
 computer and Google.
 
