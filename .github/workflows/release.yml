@@ -1,6 +1,7 @@
 # Builds cross-platform release binaries with the shared OAuth client
 # credentials injected from repository secrets, and publishes them to a
-# GitHub release. Requires the GUPPY_CLIENT_ID and GUPPY_CLIENT_SECRET
+# GitHub release along with a checksums.txt manifest (verified by
+# install.sh). Requires the GUPPY_CLIENT_ID and GUPPY_CLIENT_SECRET
 # repository secrets. Trigger by pushing a tag:
 #
 #   git tag v1.0.0 && git push origin v1.0.0
@@ -45,22 +46,18 @@ jobs:
           ldflags="-s -w -X guppy/internal/auth.embeddedClientID=${GUPPY_CLIENT_ID} -X guppy/internal/auth.embeddedClientSecret=${GUPPY_CLIENT_SECRET}"
           mkdir -p dist
 
-          for target in darwin/arm64 darwin/amd64 linux/amd64 linux/arm64 windows/amd64; do
+          for target in darwin/arm64 darwin/amd64 linux/amd64 linux/arm64; do
             goos="${target%/*}"
             goarch="${target#*/}"
-            bin=guppy
-            [ "$goos" = windows ] && bin=guppy.exe
             echo "==> ${goos}/${goarch}"
             GOOS="$goos" GOARCH="$goarch" CGO_ENABLED=0 \
-              go build -trimpath -ldflags "$ldflags" -o "$bin" .
-            archive="dist/guppy_${GITHUB_REF_NAME}_${goos}_${goarch}"
-            if [ "$goos" = windows ]; then
-              zip -q "${archive}.zip" "$bin"
-            else
-              tar -czf "${archive}.tar.gz" "$bin"
-            fi
-            rm "$bin"
+              go build -trimpath -ldflags "$ldflags" -o guppy .
+            tar -czf "dist/guppy_${GITHUB_REF_NAME}_${goos}_${goarch}.tar.gz" guppy
+            rm guppy
           done
+
+          # install.sh verifies downloads against this manifest.
+          (cd dist && sha256sum *.tar.gz > checksums.txt)
 
       - name: Publish release
         env:

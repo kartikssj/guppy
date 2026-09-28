@@ -26,8 +26,24 @@ focused pane, themed after [opencode](https://opencode.ai)'s dark palette.
 
 ## Install
 
-Download a prebuilt binary from [Releases](../../releases) — these ship with
-guppy's shared OAuth credentials and work out of the box.
+macOS / Linux:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/kartikssj/guppy/main/install.sh | sh
+```
+
+The script downloads the latest release, verifies its SHA-256 checksum, and
+installs to `~/.local/bin` (override with `GUPPY_INSTALL_DIR`, pin a version
+with `GUPPY_VERSION`). Prefer to inspect it first? Download the script, read
+it, then run it.
+
+Or download a prebuilt binary manually from [Releases](../../releases) — these
+ship with guppy's shared OAuth credentials and work out of the box. On macOS a
+browser-downloaded binary is quarantined by Gatekeeper; allow it with:
+
+```sh
+xattr -d com.apple.quarantine guppy
+```
 
 Or build from source:
 
