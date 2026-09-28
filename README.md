@@ -73,12 +73,6 @@ On first run your browser opens to Google's sign-in page. Click **Allow**,
 come back to the terminal, and your tasks are there. The token is cached in
 `~/.config/guppy/` and refreshes automatically, so you only do this once.
 
-> **"Google hasn't verified this app":** until guppy's OAuth app completes
-> Google's verification, you'll see this warning on the consent screen. It's
-> expected — click **Advanced → Go to guppy** to proceed. guppy requests only
-> the Google Tasks scope and talks to Google directly; nothing is sent
-> anywhere else.
-
 To sign in with a different account, run `guppy --reauth`.
 
 ## Keys
@@ -154,3 +148,4 @@ and [AGENTS.md](AGENTS.md) for contributor/agent guidelines.
 ## Roadmap
 
 Due dates, search, hiding/clearing completed tasks, multiple accounts.
+
