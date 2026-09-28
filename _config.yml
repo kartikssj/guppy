@@ -2,7 +2,7 @@
 # app home page for Google OAuth consent-screen verification. Pages source is
 # the repo root; PRIVACY.md/TERMS.md carry front matter so they render at
 # /privacy/ and /terms/ without duplicating the legal text.
-title: guppy
+title: Guppy
 description: A fast, keyboard-driven terminal UI for Google Tasks.
 theme: jekyll-theme-minimal
 baseurl: "/guppy"
