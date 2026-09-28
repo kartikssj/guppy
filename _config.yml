@@ -4,5 +4,6 @@
 # /privacy/ and /terms/ without duplicating the legal text.
 title: Guppy
 description: A fast, keyboard-driven terminal UI for Google Tasks.
+logo: /favicon.png
 theme: jekyll-theme-minimal
 baseurl: "/guppy"

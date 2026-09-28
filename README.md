@@ -1,5 +1,9 @@
 # guppy
 
+<p align="center">
+  <img src="favicon.png" alt="guppy — a fish at a terminal prompt" width="160">
+</p>
+
 A fast, keyboard-driven terminal UI for Google Tasks.
 
 ```
